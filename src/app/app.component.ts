@@ -11,6 +11,8 @@ export class AppComponent  implements AfterViewInit{
   title = 'my-practice-app';
   parentMessage:string = 'Message coming from parent component';
   message!:string;
+  messageFromTypescriptFile = "Message From Typescript file.";
+  fromChildOutput!:string;
   @ViewChild(PostComponent) childComp: any;
 
   constructor() {
@@ -23,8 +25,8 @@ export class AppComponent  implements AfterViewInit{
   }
 
   reciveMessage($event: string) {
-    console.log($event);
+    this.fromChildOutput = $event;
     
  }
- 
+
 }
