@@ -1,6 +1,13 @@
-<h1>Angular App</h1>
+<h1 [class.text-red] = "bool">Angular App</h1>
+<h1 [style.color] = "bool? 'red':'blue'">Style Binding</h1>
 <p>{{messageFromTypescriptFile}}</p>
+<img src="{{ imgUrl }}" alt="">
+<img [src]="imgUrl" alt="">
 <p>{{message}}</p>
 <app-navbar></app-navbar>
 <app-post [fromParent]='parentMessage' (messageEvent)='reciveMessage($event)'></app-post>
 <p>{{fromChildOutput}}</p>
+<button (click) = "buttonClick()">Click Me</button>
+<p> #######</p>
+
+<input type="text" (keyup)="onKeyup()"/>
