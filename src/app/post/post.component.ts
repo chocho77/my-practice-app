@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -14,8 +14,18 @@ export class PostComponent implements OnInit{
   @Input()
   fromParent!: string;
   postMessage:string = "Message from Post Component";
+  childMessage:string = "From Child Component";
+  outputChildMessage:string = 'Message from Child Component Via Output';
+
+  @Output() messageEvent = new EventEmitter<string>();
+
   constructor(){}
   ngOnInit(): void {
+  }
+
+  sendMessage() {
+    this.messageEvent.emit(this.outputChildMessage);
+  
   }
 
 }
